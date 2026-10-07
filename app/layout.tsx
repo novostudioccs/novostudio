@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ruta } from "@/lib/ruta";
+import { guionInicio } from "@/components/Inicio";
 import "./globals.css";
 
 const display = localFont({
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: guionInicio }} />
         <a href="#contenido" className="skip">
           Saltar al contenido
         </a>

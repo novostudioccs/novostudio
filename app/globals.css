@@ -34,6 +34,9 @@
   ::selection {
     @apply bg-accent text-on-accent;
   }
+  [tabindex="-1"]:focus {
+    outline: none;
+  }
   :focus-visible {
     @apply outline outline-2 outline-offset-4 outline-current;
   }
