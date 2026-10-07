@@ -125,7 +125,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     id: "o602",
-    nombre: "Proyecto Oficina 602",
+    nombre: "Proyecto Skyline",
     foto: "oficina-602",
     alt: "Render de oficina con escritorio, butaca y panel de madera",
     resumen: "Una oficina que transmite confianza desde la entrada.",
