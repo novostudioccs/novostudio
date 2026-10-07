@@ -58,11 +58,10 @@ export const proyectos: Proyecto[] = [
     nombre: "Proyecto La Romana",
     foto: "la-romana",
     alt: "Render de fachada de vivienda de tres niveles con jardineras",
-    resumen: "Vivienda de tres niveles, por fuera y por dentro.",
+    resumen: "Una casa pensada para vivirse hacia adentro y hacia afuera.",
     descripcion: [
-      "Una vivienda de tres niveles resuelta como un solo proyecto: la fachada, los exteriores y los espacios interiores se diseñaron con el mismo lenguaje.",
-      "Hacia la calle, volúmenes horizontales con jardineras y celosías verticales dan privacidad sin cerrar la casa. Hacia adentro, el área social se abre a la terraza, la parrillera y la piscina, de modo que la sala y el comedor se prolongan al exterior.",
-      "En la habitación infantil, la carpintería a medida resuelve clóset, mueble de TV y escritorio en una paleta clara de madera y tonos crema.",
+      "Diseño integral de una vivienda familiar, de la fachada a los interiores, concebido como un solo proyecto para que toda la casa hable el mismo lenguaje.",
+      "Las áreas sociales se abren a la terraza y la piscina, convirtiendo el exterior en el lugar natural para recibir y compartir. El resultado es una casa con presencia propia, cómoda en el día a día y pensada para ganar valor con el tiempo.",
     ],
     ficha: [
       ["Tipo", "Residencial"],
@@ -94,10 +93,10 @@ export const proyectos: Proyecto[] = [
     nombre: "Proyecto Gallery",
     foto: "gallery",
     alt: "Render de sala con mueble de TV y pufs verdes",
-    resumen: "Un apartamento existente, puesto al día.",
+    resumen: "Un apartamento existente, renovado para vivirlo de otra manera.",
     descripcion: [
-      "Modernización completa de los interiores de un apartamento existente. El reto era actualizar la vivienda sin perder su amplitud.",
-      "Se integraron la sala y el comedor en un solo espacio social, se ordenaron los almacenajes en muebles a toda altura y se trabajó una paleta clara con acentos en madera, piedra y cobre. El recibidor, el family room y el estudio siguen la misma línea.",
+      "Modernización de los interiores de un apartamento con años de uso, llevándolo a un lenguaje contemporáneo sin perder su amplitud.",
+      "Las áreas sociales se integraron para generar espacios de encuentro familiar, y cada ambiente se resolvió con orden y calidez. El inmueble se siente nuevo, se disfruta más y se posiciona mejor en su mercado.",
     ],
     ficha: [
       ["Tipo", "Residencial"],
@@ -129,10 +128,10 @@ export const proyectos: Proyecto[] = [
     nombre: "Proyecto Oficina 602",
     foto: "oficina-602",
     alt: "Render de oficina con escritorio, butaca y panel de madera",
-    resumen: "Una oficina que recibe como una sala.",
+    resumen: "Una oficina que transmite confianza desde la entrada.",
     descripcion: [
-      "Diseño de interiores y arquitectura de una oficina corporativa. La distribución ordena el recorrido desde la recepción hasta las oficinas privadas y la sala de reuniones.",
-      "Las divisiones de vidrio mantienen la luz natural en toda la planta, y los paneles de madera, la iluminación indirecta y el mobiliario de líneas curvas le dan a la oficina la calidez de un espacio residencial.",
+      "Diseño de interiores y arquitectura de una oficina corporativa, pensada para que quien llega perciba orden, solidez y cuidado por el detalle.",
+      "La distribución acompaña el recorrido de clientes y equipo, con ambientes luminosos y la calidez de un espacio residencial. Un lugar donde da gusto trabajar y recibir, y que respalda la imagen de la empresa.",
     ],
     ficha: [
       ["Tipo", "Corporativo"],
@@ -164,12 +163,10 @@ export const proyectos: Proyecto[] = [
     nombre: "Proyecto Aura",
     foto: "aura-portada",
     alt: "Render de sala de doble altura con pared de TV, mueble bajo y pufs",
-    resumen: "Sala de doble altura, cocina y salón de juegos.",
+    resumen: "Espacios sociales renovados para disfrutar en familia.",
     descripcion: [
-      "Modernización de los interiores de un apartamento, con la sala de doble altura como espacio principal. La intervención aprovecha la altura del espacio con un plafón que baña de luz indirecta las paredes.",
-      "La pared del televisor se revistió con textura y se resolvió con un mueble bajo a medida; el mobiliario oscuro contrasta con el piso y las superficies claras.",
-      "La cocina sigue la misma paleta: gabinetes claros sin tiradores, una pared de madera que integra la nevera y los hornos, y un mesón que se prolonga en mesa para el día a día.",
-      "El salón de juegos reúne la mesa de billar, un bar con barra y repisas iluminadas, una cava de vinos acristalada y un área de TV, sobre piso de madera.",
+      "Modernización de los interiores de un apartamento, con foco en los espacios donde la familia se reúne: la sala, la cocina y el salón de juegos.",
+      "Cada ambiente se transformó en un punto de encuentro contemporáneo, cómodo para el día a día y listo para recibir. Una vivienda actualizada que se vive más y vale más.",
     ],
     ficha: [
       ["Tipo", "Residencial"],
