@@ -75,9 +75,11 @@ export const proyectos: Proyecto[] = [
     galeria: [
       { src: "g-romana-1", alt: "Fachada principal con jardineras y portones" },
       { src: "g-romana-2", alt: "Fachada vista en ángulo, con el estacionamiento techado" },
+      { src: "g-romana-15", alt: "Fachada lateral con jardineras y vista a la piscina" },
       { src: "g-romana-3", alt: "Acceso principal con escalera iluminada" },
       { src: "g-romana-4", alt: "Fachada interior y piscina" },
       { src: "g-romana-5", alt: "Terraza techada con comedor exterior" },
+      { src: "g-romana-16", alt: "Parrillera y comedor exterior bajo la terraza" },
       { src: "g-romana-6", alt: "Área de descanso junto a la piscina" },
       { src: "g-romana-7", alt: "Sala con sofá en L y mueble de TV" },
       { src: "g-romana-8", alt: "Comedor con lámpara de esferas y vista al jardín" },
@@ -153,7 +155,6 @@ export const proyectos: Proyecto[] = [
       { src: "g-o602-5", alt: "Oficina privada con escritorio y sofá" },
       { src: "g-o602-6", alt: "Oficina con área de estar" },
       { src: "g-o602-4", alt: "Sala de reuniones con vista a la ciudad" },
-      { src: "g-o602-13", alt: "Sala de reuniones vista de frente" },
     ],
     cita: "Gracias, de verdad quedó increíble 🔥🔥",
     cliente: "R. C.",
@@ -172,7 +173,7 @@ export const proyectos: Proyecto[] = [
     ],
     ficha: [
       ["Tipo", "Residencial"],
-      ["Área", "80 m²"],
+      ["Área", "750 m²"],
       ["Ubicación", "Valle Arriba, Caracas"],
       ["Alcance", "Modernización de interiores"],
       ["Espacios", "Sala de doble altura, cocina y salón de juegos con bar y cava"],
