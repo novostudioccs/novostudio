@@ -42,7 +42,7 @@ export const proyectos = [
   { nombre: "Proyecto La Romana", foto: "la-romana", alt: "Render de fachada de vivienda de tres niveles con jardineras", tipo: "Residencial", m2: "700 m²", alcance: "Fachadas e interiores", cita: "Gracias, ya recibí el correo. ¡Muy bello todo! 💕", cliente: "P. I." },
   { nombre: "Proyecto Gallery", foto: "gallery", alt: "Render de sala con mueble de TV y pufs verdes", tipo: "Residencial", m2: "500 m²", alcance: "Modernización de interiores", cita: "¡Me encantó el resultado!", cliente: "C. V." },
   { nombre: "Proyecto Oficina 602", foto: "oficina-602", alt: "Render de oficina con escritorio, butaca y panel de madera", tipo: "Corporativo", m2: "180 m²", alcance: "Interiores y arquitectura", cita: "Gracias, de verdad quedó increíble 🔥🔥", cliente: "R. C." },
-  { nombre: "Proyecto Aura", foto: "aura-sala", alt: "Render de sala con televisor, mueble bajo y butaca clara", tipo: "Residencial", m2: "80 m²", alcance: "Remodelación de sala", cita: "¡Wao, un cambio total! 😍", cliente: "D. M." },
+  { nombre: "Proyecto Aura", foto: "aura-tv", alt: "Render de sala con televisor, mueble bajo y butaca clara", tipo: "Residencial", m2: "80 m²", alcance: "Remodelación de sala", cita: "¡Wao, un cambio total! 😍", cliente: "D. M." },
 ];
 
 export const modalidades = [
