@@ -7,7 +7,18 @@ import { ruta } from "@/lib/ruta";
 import { Foto } from "./Foto";
 import { Reveal } from "./Reveal";
 
-type Errores = { nombre?: string; correo?: string; mensaje?: string };
+type Errores = { nombre?: string; correo?: string; servicio?: string; otro?: string; mensaje?: string };
+
+const servicios = [
+  "Diseño de interiores",
+  "Diseño arquitectónico",
+  "Remodelación o ejecución de obra",
+  "Diseño + obra",
+  "Renders 3D y recorrido en video",
+  "Acabados especiales",
+  "Asesoría",
+  "Otro",
+];
 
 const base = "mt-1.5 w-full rounded-xl border bg-background px-4 py-3 text-base placeholder:text-foreground/70";
 const enlacePie = "link inline-flex min-h-11 cursor-pointer items-center";
@@ -33,6 +44,7 @@ function Campo({ id, etiqueta, error, opcional, area, ...props }: { id: string; 
 export function Contacto() {
   const [errores, setErrores] = useState<Errores>({});
   const [enviado, setEnviado] = useState(false);
+  const [servicio, setServicio] = useState("");
   const form = useRef<HTMLFormElement>(null);
 
   function enviar(e: FormEvent<HTMLFormElement>) {
@@ -44,6 +56,8 @@ export function Contacto() {
     const err: Errores = {};
     if (!v("nombre")) err.nombre = "Escribe tu nombre.";
     if (v("correo") && !/^[^\s@.]+(\.[^\s@.]+)*@[^\s@.]+(\.[^\s@.]+)+$/.test(v("correo"))) err.correo = "Revisa el correo: debe tener el formato nombre@dominio.com.";
+    if (!v("servicio")) err.servicio = "Selecciona el servicio que necesitas.";
+    if (v("servicio") === "Otro" && !v("otro")) err.otro = "Describe el servicio que buscas.";
     if (!v("mensaje")) err.mensaje = "Cuéntanos qué espacio es y qué necesitas.";
     setErrores(err);
     setEnviado(false);
@@ -52,12 +66,14 @@ export function Contacto() {
       form.current?.querySelector<HTMLElement>(`#${primero}`)?.focus();
       return;
     }
-    const texto = [`Hola, soy ${v("nombre")}.`, v("mensaje"), v("telefono") && `Teléfono: ${v("telefono")}`, v("correo") && `Correo: ${v("correo")}`].filter(Boolean).join("\n");
+    const pedido = v("servicio") === "Otro" ? v("otro") : v("servicio");
+    const texto = [`Hola, soy ${v("nombre")}.`, `Servicio: ${pedido}`, v("mensaje"), v("telefono") && `Teléfono: ${v("telefono")}`, v("correo") && `Correo: ${v("correo")}`].filter(Boolean).join("\n");
     const url = whatsapp(texto);
     const ventana = window.open(url, "_blank");
     if (ventana) ventana.opener = null;
     else window.location.href = url; // ventana emergente bloqueada: se abre en la misma pestaña
     e.currentTarget.reset();
+    setServicio("");
     setEnviado(true);
   }
 
@@ -78,6 +94,34 @@ export function Contacto() {
                 <Campo id="telefono" etiqueta="Teléfono" type="tel" autoComplete="tel" opcional />
                 <Campo id="correo" etiqueta="Correo" type="email" autoComplete="email" opcional error={errores.correo} />
               </div>
+              <div>
+                <label htmlFor="servicio" className="text-sm font-semibold">
+                  Servicio que necesitas
+                </label>
+                <select
+                  id="servicio"
+                  name="servicio"
+                  value={servicio}
+                  onChange={(e) => setServicio(e.target.value)}
+                  aria-required
+                  aria-invalid={!!errores.servicio}
+                  aria-describedby={errores.servicio ? "servicio-error" : undefined}
+                  className={`${base} min-h-12 cursor-pointer ${errores.servicio ? "border-destructive" : "border-primary/60"}`}
+                >
+                  <option value="">Selecciona una opción</option>
+                  {servicios.map((x) => (
+                    <option key={x} value={x}>
+                      {x}
+                    </option>
+                  ))}
+                </select>
+                {errores.servicio && (
+                  <p id="servicio-error" className="mt-1.5 text-sm font-semibold text-destructive">
+                    {errores.servicio}
+                  </p>
+                )}
+              </div>
+              {servicio === "Otro" && <Campo id="otro" etiqueta="¿Qué servicio buscas?" aria-required placeholder="Descríbelo en pocas palabras" error={errores.otro} />}
               <Campo id="mensaje" etiqueta="Mensaje" aria-required area placeholder="¿Qué espacio es y qué necesitas?" error={errores.mensaje} />
               <button type="submit" className="mt-2 min-h-12 cursor-pointer rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-colors duration-200 hover:bg-accent/90">
                 Enviar por WhatsApp
