@@ -38,11 +38,140 @@ export const pasos = [
   { titulo: "Recibe el espacio terminado", texto: "Entregamos la obra concluida, con los acabados suministrados e instalados." },
 ];
 
-export const proyectos = [
-  { nombre: "Proyecto La Romana", foto: "la-romana", alt: "Render de fachada de vivienda de tres niveles con jardineras", tipo: "Residencial", m2: "700 m²", alcance: "Fachadas e interiores", cita: "Gracias, ya recibí el correo. ¡Muy bello todo! 💕", cliente: "P. I." },
-  { nombre: "Proyecto Gallery", foto: "gallery", alt: "Render de sala con mueble de TV y pufs verdes", tipo: "Residencial", m2: "500 m²", alcance: "Modernización de interiores", cita: "¡Me encantó el resultado!", cliente: "C. V." },
-  { nombre: "Proyecto Oficina 602", foto: "oficina-602", alt: "Render de oficina con escritorio, butaca y panel de madera", tipo: "Corporativo", m2: "180 m²", alcance: "Interiores y arquitectura", cita: "Gracias, de verdad quedó increíble 🔥🔥", cliente: "R. C." },
-  { nombre: "Proyecto Aura", foto: "aura-luz", alt: "Render de sala con televisor, mueble bajo y butaca clara", tipo: "Residencial", m2: "80 m²", alcance: "Remodelación de sala", cita: "¡Wao, un cambio total! 😍", cliente: "D. M." },
+export type Proyecto = {
+  id: string;
+  nombre: string;
+  foto: string;
+  alt: string;
+  resumen: string;
+  descripcion: string[];
+  ficha: [string, string][];
+  galeria: { alt: string; vertical?: boolean }[];
+  cita: string;
+  cliente: string;
+};
+
+/** Las imágenes de la galería son /proyectos/g-<id>-<n>.webp, en el orden de `galeria`. */
+export const proyectos: Proyecto[] = [
+  {
+    id: "romana",
+    nombre: "Proyecto La Romana",
+    foto: "la-romana",
+    alt: "Render de fachada de vivienda de tres niveles con jardineras",
+    resumen: "Vivienda de tres niveles, por fuera y por dentro.",
+    descripcion: [
+      "Una vivienda de tres niveles resuelta como un solo proyecto: la fachada, los exteriores y los espacios interiores se diseñaron con el mismo lenguaje.",
+      "Hacia la calle, volúmenes horizontales con jardineras y celosías verticales dan privacidad sin cerrar la casa. Hacia adentro, el área social se abre a la terraza, la parrillera y la piscina, de modo que la sala y el comedor se prolongan al exterior.",
+    ],
+    ficha: [
+      ["Tipo", "Residencial"],
+      ["Área", "700 m²"],
+      ["Ubicación", "Los Naranjos, Caracas"],
+      ["Alcance", "Fachadas e interiores"],
+      ["Espacios", "Fachada y acceso, terraza con parrillera, piscina, sala y comedor"],
+      ["Materialidad", "Revestimiento texturizado, celosías verticales, madera en plafones"],
+    ],
+    galeria: [
+      { alt: "Fachada principal con jardineras y portones" },
+      { alt: "Fachada vista en ángulo, con el estacionamiento techado" },
+      { alt: "Acceso principal con escalera iluminada" },
+      { alt: "Fachada interior y piscina" },
+      { alt: "Terraza techada con comedor exterior" },
+      { alt: "Área de descanso junto a la piscina" },
+      { alt: "Sala con sofá en L y mueble de TV" },
+      { alt: "Comedor con lámpara de esferas y vista al jardín" },
+    ],
+    cita: "Gracias, ya recibí el correo. ¡Muy bello todo! 💕",
+    cliente: "P. I.",
+  },
+  {
+    id: "gallery",
+    nombre: "Proyecto Gallery",
+    foto: "gallery",
+    alt: "Render de sala con mueble de TV y pufs verdes",
+    resumen: "Un apartamento existente, puesto al día.",
+    descripcion: [
+      "Modernización completa de los interiores de un apartamento existente. El reto era actualizar la vivienda sin perder su amplitud.",
+      "Se integraron la sala y el comedor en un solo espacio social, se ordenaron los almacenajes en muebles a toda altura y se trabajó una paleta clara con acentos en madera, piedra y cobre. El recibidor, el family room y el estudio siguen la misma línea.",
+    ],
+    ficha: [
+      ["Tipo", "Residencial"],
+      ["Área", "500 m²"],
+      ["Ubicación", "Las Mercedes, Caracas"],
+      ["Alcance", "Modernización de interiores"],
+      ["Espacios", "Sala, comedor, recibidor, family room, estudio y terraza"],
+      ["Materialidad", "Madera en plafones, piedra natural, carpintería a medida"],
+    ],
+    galeria: [
+      { alt: "Sala principal con biblioteca iluminada" },
+      { alt: "Comedor para diez puestos con lámpara de aros" },
+      { alt: "Comedor y sala integrados, con vista al jardín" },
+      { alt: "Recibidor con lámparas de cobre" },
+      { alt: "Family room con mueble de TV" },
+      { alt: "Family room visto desde el sofá" },
+      { alt: "Estudio con escritorio y repisas" },
+      { alt: "Terraza con barra y comedor exterior" },
+    ],
+    cita: "¡Me encantó el resultado!",
+    cliente: "C. V.",
+  },
+  {
+    id: "o602",
+    nombre: "Proyecto Oficina 602",
+    foto: "oficina-602",
+    alt: "Render de oficina con escritorio, butaca y panel de madera",
+    resumen: "Una oficina que recibe como una sala.",
+    descripcion: [
+      "Diseño de interiores y arquitectura de una oficina corporativa. La distribución ordena el recorrido desde la recepción hasta las oficinas privadas y la sala de reuniones.",
+      "Las divisiones de vidrio mantienen la luz natural en toda la planta, y los paneles de madera, la iluminación indirecta y el mobiliario de líneas curvas le dan a la oficina la calidez de un espacio residencial.",
+    ],
+    ficha: [
+      ["Tipo", "Corporativo"],
+      ["Área", "180 m²"],
+      ["Ubicación", "Las Mercedes, Caracas"],
+      ["Alcance", "Interiores y arquitectura"],
+      ["Espacios", "Recepción, sala de espera, sala de reuniones y oficinas privadas"],
+      ["Materialidad", "Paneles de madera, divisiones de vidrio, iluminación indirecta"],
+    ],
+    galeria: [
+      { alt: "Recepción con panel de madera y lámpara de esferas" },
+      { alt: "Sala de espera con espejo orgánico" },
+      { alt: "Pasillo de acceso con divisiones de vidrio" },
+      { alt: "Sala de reuniones con vista a la ciudad" },
+      { alt: "Oficina privada con escritorio y sofá" },
+      { alt: "Oficina con área de estar" },
+      { alt: "Vestíbulo con cuadro y puf" },
+      { alt: "Oficinas vistas a través del vidrio" },
+    ],
+    cita: "Gracias, de verdad quedó increíble 🔥🔥",
+    cliente: "R. C.",
+  },
+  {
+    id: "aura",
+    nombre: "Proyecto Aura",
+    foto: "aura-portada",
+    alt: "Render de sala de doble altura con pared de TV, mueble bajo y pufs",
+    resumen: "Una sala de doble altura, renovada.",
+    descripcion: [
+      "Remodelación de una sala de doble altura. La intervención aprovecha la altura del espacio con un plafón que baña de luz indirecta las paredes.",
+      "La pared del televisor se revistió con textura y se resolvió con un mueble bajo a medida; el mobiliario oscuro contrasta con el piso y las superficies claras.",
+    ],
+    ficha: [
+      ["Tipo", "Residencial"],
+      ["Área", "80 m²"],
+      ["Ubicación", "Valle Arriba, Caracas"],
+      ["Alcance", "Remodelación de sala"],
+      ["Espacios", "Sala de doble altura y área de TV"],
+      ["Materialidad", "Revestimiento texturizado, mueble a medida, iluminación indirecta"],
+    ],
+    galeria: [
+      { alt: "Vista general de la sala con la pared del televisor", vertical: true },
+      { alt: "Pared del televisor con mueble bajo y butaca", vertical: true },
+      { alt: "Sala con sofá, butaca y vista a la ciudad", vertical: true },
+    ],
+    cita: "¡Wao, un cambio total! 😍",
+    cliente: "D. M.",
+  },
 ];
 
 export const modalidades = [
