@@ -2,26 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tokens: fuente de verdad en design-system/novo-studio/MASTER.md */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: 35 31 32; /* #231F20 */
+  --color-on-primary: 255 255 255; /* #FFFFFF */
+  --color-accent: 255 98 0; /* #FF6200 */
+  --color-on-accent: 35 31 32; /* #231F20 */
+  --color-muted: 232 226 217; /* #E8E2D9 */
+  --color-background: 247 244 239; /* #F7F4EF */
+  --color-foreground: 35 31 32; /* #231F20 */
+  --color-border: 212 204 192; /* #D4CCC0 */
+  --color-destructive: 185 28 28; /* #B91C1C */
+  --radius: 1.25rem;
+  --nav-h: 4rem;
+  --marco: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-h) + 1.5rem);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  ::selection {
+    @apply bg-accent text-on-accent;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-current;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(4px);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .display {
+    @apply font-display font-extrabold uppercase leading-[1.02] tracking-[-0.025em];
+  }
+  /* Jerarquía tipográfica: t1 (hero) > t2 (sección) > t3 (ítem) > cuerpo > label */
+  .t2 {
+    @apply font-display text-2xl font-extrabold uppercase leading-[1.12] tracking-[-0.02em] md:text-4xl md:leading-[1.1];
+  }
+  .t3 {
+    @apply font-display text-base font-extrabold uppercase leading-[1.2] tracking-[-0.01em] md:text-xl md:leading-[1.2];
+  }
+  .skip {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-4 focus:py-3 focus:text-on-primary;
+  }
+  /* Entrada escalonada del hero en CSS puro: no depende de JavaScript y el HTML sale visible. */
+  .entra {
+    animation: entra 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .entra {
+      animation: none;
+    }
+  }
+  .sin-barra {
+    scrollbar-width: none;
+  }
+  .sin-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .label {
+    @apply text-xs font-semibold uppercase tracking-[0.14em];
+  }
+  .wrap {
+    @apply mx-auto w-full max-w-page px-5 md:px-10 lg:px-16;
+  }
+  .link {
+    @apply underline decoration-1 underline-offset-4 transition-[text-decoration-thickness] duration-200 hover:decoration-2;
   }
 }
