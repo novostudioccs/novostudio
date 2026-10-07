@@ -95,7 +95,7 @@ export const proyectos: Proyecto[] = [
     alt: "Render de sala con mueble de TV y pufs verdes",
     resumen: "Un apartamento existente, renovado para vivirlo de otra manera.",
     descripcion: [
-      "Modernización de los interiores de un apartamento con años de uso, llevándolo a un lenguaje contemporáneo sin perder su amplitud.",
+      "Modernización de los interiores de un apartamento existente, llevándolo a un lenguaje contemporáneo que fomenta la amplitud y la entrada de luz natural.",
       "Las áreas sociales se integraron para generar espacios de encuentro familiar, y cada ambiente se resolvió con orden y calidez. El inmueble se siente nuevo, se disfruta más y se posiciona mejor en su mercado.",
     ],
     ficha: [
@@ -166,7 +166,7 @@ export const proyectos: Proyecto[] = [
     resumen: "Espacios sociales renovados para disfrutar en familia.",
     descripcion: [
       "Modernización de los interiores de un apartamento, con foco en los espacios donde la familia se reúne: la sala, la cocina y el salón de juegos.",
-      "Cada ambiente se transformó en un punto de encuentro contemporáneo, cómodo para el día a día y listo para recibir. Una vivienda actualizada que se vive más y vale más.",
+      "Cada ambiente se transformó en un punto de encuentro contemporáneo, cómodo para el día a día y listo para recibir. Una vivienda actualizada que se vive mejor, revalorizando sus espacios.",
     ],
     ficha: [
       ["Tipo", "Residencial"],
