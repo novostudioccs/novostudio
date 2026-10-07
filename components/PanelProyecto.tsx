@@ -51,8 +51,8 @@ export function PanelProyecto({ p, alCerrar }: { p: Proyecto; alCerrar: () => vo
           <div className="p-3 lg:sticky lg:top-0">
           <div className="relative aspect-[4/3] overflow-hidden rounded bg-primary lg:aspect-[16/11]">
             <AnimatePresence initial={false}>
-              <motion.div key={i} variants={fundido} initial="hidden" animate="visible" exit="hidden" className="absolute inset-0">
-                <Foto src={`g-${p.id}-${i + 1}`} alt={g.alt} sizes="(min-width: 1024px) 45rem, 96vw" contener={g.vertical} priority className="h-full rounded-none bg-primary" />
+              <motion.div key={g.src} variants={fundido} initial="hidden" animate="visible" exit="hidden" className="absolute inset-0">
+                <Foto src={g.src} alt={g.alt} sizes="(min-width: 1024px) 45rem, 96vw" contener={g.vertical} priority className="h-full rounded-none bg-primary" />
               </motion.div>
             </AnimatePresence>
             {total > 1 && (
@@ -78,7 +78,7 @@ export function PanelProyecto({ p, alCerrar }: { p: Proyecto; alCerrar: () => vo
           </p>
           <ul className="sin-barra flex gap-2 overflow-x-auto px-1 pb-1 pt-3">
             {p.galeria.map((x, n) => (
-              <li key={n} className="shrink-0">
+              <li key={x.src} className="shrink-0">
                 <button
                   type="button"
                   aria-label={`Ver imagen ${n + 1}: ${x.alt}`}
@@ -86,7 +86,7 @@ export function PanelProyecto({ p, alCerrar }: { p: Proyecto; alCerrar: () => vo
                   onClick={() => setI(n)}
                   className={`block cursor-pointer overflow-hidden rounded-lg border-2 transition-opacity duration-200 ${n === i ? "border-accent" : "border-transparent opacity-60 hover:opacity-100"}`}
                 >
-                  <Foto src={`g-${p.id}-${n + 1}`} alt="" sizes="96px" className="h-14 w-20 rounded-none" />
+                  <Foto src={x.src} alt="" sizes="96px" className="h-14 w-20 rounded-none" />
                 </button>
               </li>
             ))}
