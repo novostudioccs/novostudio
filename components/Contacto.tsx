@@ -7,7 +7,7 @@ import { ruta } from "@/lib/ruta";
 import { Foto } from "./Foto";
 import { Reveal } from "./Reveal";
 
-type Errores = { nombre?: string; correo?: string; servicio?: string; otro?: string; mensaje?: string };
+type Errores = { nombre?: string; correo?: string; servicio?: string; otro?: string };
 
 const servicios = [
   "Diseño de interiores",
@@ -58,12 +58,14 @@ export function Contacto() {
     if (v("correo") && !/^[^\s@.]+(\.[^\s@.]+)*@[^\s@.]+(\.[^\s@.]+)+$/.test(v("correo"))) err.correo = "Revisa el correo: debe tener el formato nombre@dominio.com.";
     if (!v("servicio")) err.servicio = "Selecciona el servicio que necesitas.";
     if (v("servicio") === "Otro" && !v("otro")) err.otro = "Describe el servicio que buscas.";
-    if (!v("mensaje")) err.mensaje = "Cuéntanos qué espacio es y qué necesitas.";
     setErrores(err);
     setEnviado(false);
     const primero = Object.keys(err)[0];
     if (primero) {
-      form.current?.querySelector<HTMLElement>(`#${primero}`)?.focus();
+      const campo = form.current?.querySelector<HTMLElement>(`#${primero}`);
+      // Centrado en pantalla para que la barra fija no tape el campo con error.
+      campo?.scrollIntoView({ block: "center", behavior: "smooth" });
+      campo?.focus({ preventScroll: true });
       return;
     }
     const pedido = v("servicio") === "Otro" ? v("otro") : v("servicio");
@@ -122,7 +124,7 @@ export function Contacto() {
                 )}
               </div>
               {servicio === "Otro" && <Campo id="otro" etiqueta="¿Qué servicio buscas?" aria-required placeholder="Descríbelo en pocas palabras" error={errores.otro} />}
-              <Campo id="mensaje" etiqueta="Mensaje" aria-required area placeholder="¿Qué espacio es y qué necesitas?" error={errores.mensaje} />
+              <Campo id="mensaje" etiqueta="Mensaje" opcional area placeholder="¿Qué espacio es y qué necesitas?" />
               <button type="submit" className="mt-2 min-h-12 cursor-pointer rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-colors duration-200 hover:bg-accent/90">
                 Enviar por WhatsApp
               </button>
