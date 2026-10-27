@@ -17,10 +17,12 @@ export function Proceso() {
           etiqueta="Proceso"
           titulo={
             <>
-              Cuatro pasos, <span className="font-light">del primer mensaje a la entrega.</span>
+              Del levantamiento <span className="font-light">a la entrega.</span>
             </>
           }
-        />
+        >
+          <p className="mt-4 max-w-[40rem] text-foreground/80">Una buena obra no se improvisa: se planifica. Así trabajamos contigo, etapa por etapa.</p>
+        </Encabezado>
         <div className="mt-10 grid gap-4 md:mt-14 lg:grid-cols-2">
           <ol className="border-b border-primary/25">
             {pasos.map((p, i) => {

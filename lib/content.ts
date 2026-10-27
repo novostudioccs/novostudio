@@ -19,10 +19,12 @@ export const cifras = [
 
 /** Una imagen por paso del proceso, en el mismo orden que `pasos`. */
 export const fotosProceso = [
-  { foto: "paso-1", alt: "Render de sala con sofá en L y mueble de TV" },
-  { foto: "paso-2", alt: "Render de sala de reuniones con mesa blanca" },
-  { foto: "paso-3", alt: "Render de terraza con cocina exterior y comedor" },
-  { foto: "paso-4", alt: "Render de terraza con comedor exterior terminado" },
+  { foto: "obra-1", alt: "Apartamento en obra gris con ventanal de piso a techo" },
+  { foto: "obra-2", alt: "Arquitectos revisando un plano y midiendo con láser en la obra" },
+  { foto: "obra-3", alt: "Equipo de diseño trabajando sobre planos y renders en una mesa" },
+  { foto: "obra-4", alt: "Escritorio con presupuestos y muestras de madera, piedra y textiles" },
+  { foto: "obra-5", alt: "Obreros instalando paneles de yeso con andamio en el apartamento" },
+  { foto: "obra-6", alt: "Sala terminada con chimenea, sofá curvo, pared apanelada en madera y barra" },
 ];
 
 export const servicios = [
@@ -32,10 +34,12 @@ export const servicios = [
 ] as const;
 
 export const pasos = [
-  { titulo: "Cuéntanos tu espacio", texto: "Nos escribes por WhatsApp y envías planos, levantamientos o fotos. Si no tienes planos, hacemos el levantamiento." },
-  { titulo: "Recibe tu presupuesto", texto: "Para un proyecto de diseño, en 2 a 4 horas. Para una obra, agendamos primero una visita técnica." },
-  { titulo: "Diseñamos y ejecutamos", texto: "Renders y planimetría para aprobar cada decisión; después, la ejecución de la obra." },
-  { titulo: "Recibe el espacio terminado", texto: "Entregamos la obra concluida, con los acabados suministrados e instalados." },
+  { titulo: "Nos cuentas tu espacio", texto: "Nos escribes y envías planos, fotos o levantamientos. Si no tienes planos, hacemos el levantamiento." },
+  { titulo: "Visita técnica y presupuesto", texto: "Visitamos la obra, medimos y te entregamos un presupuesto claro, sin sorpresas. El presupuesto es gratis." },
+  { titulo: "Diseñamos tu proyecto", texto: "Proyecto arquitectónico, diseño de interiores y renders para que veas el resultado antes de construir." },
+  { titulo: "Procura y presupuesto de ejecución", texto: "Llevamos tu proyecto a números tangibles: materiales, cantidades y costos reales para el presupuesto de obra." },
+  { titulo: "Ejecutamos con seguimiento", texto: "Dirigimos la obra etapa por etapa y te mantenemos al tanto de cada avance." },
+  { titulo: "Entregamos a tu medida", texto: "Llave en mano o solo la parte que necesites: adaptamos el alcance de la obra a tu proyecto." },
 ];
 
 export type Proyecto = {
