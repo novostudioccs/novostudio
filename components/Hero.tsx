@@ -49,6 +49,9 @@ export function Hero() {
                   Ver proyectos
                 </Boton>
               </div>
+              <p className="entra mt-4 text-right text-[0.4125rem] leading-none tracking-[0.04em] text-white/75" style={i(4)}>
+                RIF J-50894644-8
+              </p>
             </div>
           </div>
         </div>
