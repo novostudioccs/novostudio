@@ -173,7 +173,7 @@ export function Contacto() {
             </a>
           </address>
         </div>
-        <p className="wrap mt-10 text-xs">© 2026 Növo Studio</p>
+        <p className="wrap mt-10 text-xs">© 2026 Növo Studio · RIF J-50894644-8</p>
       </div>
       </div>
     </footer>
