@@ -125,10 +125,12 @@ export function PanelProyecto({ p, alCerrar }: { p: Proyecto; alCerrar: () => vo
             ))}
           </dl>
 
-          <figure className="mt-8 rounded bg-muted p-5">
-            <blockquote className="text-lg font-semibold">“{p.cita}”</blockquote>
-            <figcaption className="mt-1 text-sm text-foreground/80">{p.cliente}, cliente</figcaption>
-          </figure>
+          {p.cita && (
+            <figure className="mt-8 rounded bg-muted p-5">
+              <blockquote className="text-lg font-semibold">“{p.cita}”</blockquote>
+              <figcaption className="mt-1 text-sm text-foreground/80">{p.cliente}, cliente</figcaption>
+            </figure>
+          )}
 
           <button type="button" onClick={alFormulario} className="mt-8 inline-flex min-h-12 w-full cursor-pointer items-center justify-between gap-3 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-colors duration-200 hover:bg-accent/90">
             Quiero un proyecto así

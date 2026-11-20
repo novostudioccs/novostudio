@@ -51,8 +51,8 @@ export type Proyecto = {
   descripcion: string[];
   ficha: [string, string][];
   galeria: { src: string; alt: string; vertical?: boolean }[];
-  cita: string;
-  cliente: string;
+  cita?: string;
+  cliente?: string;
 };
 
 /** Cada imagen de la galería indica su archivo en /proyectos (sin el ancho ni la extensión). */
@@ -196,6 +196,38 @@ export const proyectos: Proyecto[] = [
     ],
     cita: "¡Wao, un cambio total! 😍",
     cliente: "D. M.",
+  },
+  {
+    id: "washon",
+    nombre: "Proyecto Wash.on",
+    foto: "washon",
+    alt: "Render de fachada de lavado de vehículos con portón naranja y palmeras",
+    resumen: "Un espacio comercial con identidad propia, de la fachada al último detalle.",
+    descripcion: [
+      "Arquitectura e interiorismo para un centro de lavado y detailing de vehículos que va más allá del servicio: la recepción, las salas de espera y la cafetería convierten cada visita en una experiencia.",
+      "La identidad de la marca recorre cada superficie, de la fachada a las bahías de lavado. El resultado es un local que se reconoce desde la calle, invita a quedarse y eleva el valor del inmueble.",
+    ],
+    ficha: [
+      ["Tipo", "Comercial"],
+      ["Ubicación", "Gurabo, Puerto Rico"],
+      ["Alcance", "Arquitectura e interiorismo"],
+      ["Espacios", "Fachada, recepción, salas de espera, cafetería y bahías de lavado"],
+      ["Materialidad", "Santamarías con mural gráfico, muros de listones, mamparas de vidrio, iluminación lineal"],
+    ],
+    galeria: [
+      { src: "g-washon-1", alt: "Fachada con portón naranja y bandera de la marca", vertical: true },
+      { src: "g-washon-2", alt: "Recepción con mostrador de listones y vista al jardín", vertical: true },
+      { src: "g-washon-3", alt: "Sala de espera con sofá curvo frente al ventanal", vertical: true },
+      { src: "g-washon-4", alt: "Sala de espera: butacas, mesas auxiliares y lámpara de pie", vertical: true },
+      { src: "g-washon-5", alt: "Butaca junto a la puerta de vidrio", vertical: true },
+      { src: "g-washon-6", alt: "Cafetería con vehículo en exhibición tras el vidrio", vertical: true },
+      { src: "g-washon-7", alt: "Cafetería: mesas redondas y estantería de productos", vertical: true },
+      { src: "g-washon-8", alt: "Bahías de lavado separadas por mamparas de vidrio", vertical: true },
+      { src: "g-washon-9", alt: "Bahía con elevador y mural gráfico", vertical: true },
+      { src: "g-washon-10", alt: "Vehículo clásico en bahía de detailing", vertical: true },
+      { src: "g-washon-11", alt: "Deportivo blanco en bahía de lavado", vertical: true },
+      { src: "g-washon-12", alt: "Vehículo clásico de frente, bajo la iluminación lineal", vertical: true },
+    ],
   },
 ];
 
