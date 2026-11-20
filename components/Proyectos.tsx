@@ -20,16 +20,16 @@ export function Proyectos() {
             </>
           }
         />
-        <Reveal grupo className="mt-10 grid gap-4 sm:grid-cols-2 md:mt-14 md:grid-cols-3 lg:grid-cols-5">
+        <Reveal grupo className="mt-10 grid gap-4 sm:grid-cols-2 md:mt-14 md:grid-cols-3">
           {proyectos.map((p, i) => (
-            <Item key={p.id} className={i % 2 === 0 ? "lg:mt-10" : ""}>
+            <Item key={p.id} className={i % 3 === 1 ? "md:mt-10" : ""}>
               <button
                 type="button"
                 aria-haspopup="dialog"
                 onClick={() => setAbierto(i)}
                 className="group relative isolate block w-full cursor-pointer overflow-hidden rounded bg-primary text-left text-on-primary"
               >
-                <Foto src={p.foto} alt={p.alt} sizes="(min-width: 1024px) 19vw, (min-width: 768px) 31vw, (min-width: 640px) 46vw, 92vw" className="aspect-[4/5] rounded-none transition-transform duration-500 group-hover:scale-[1.03]" />
+                <Foto src={p.foto} alt={p.alt} sizes="(min-width: 768px) 31vw, (min-width: 640px) 46vw, 92vw" className="aspect-[4/5] rounded-none transition-transform duration-500 group-hover:scale-[1.03]" />
                 <span aria-hidden className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/90 to-transparent" />
                 <span className="absolute inset-x-0 bottom-0 p-5">
                   <span className="t3 block md:text-lg">{p.nombre}</span>
