@@ -7,6 +7,7 @@ export const instagram = { usuario: "@el_novostudio", url: "https://www.instagra
 export const enlaces = [
   { href: "#servicios", texto: "Servicios" },
   { href: "#proceso", texto: "Proceso" },
+  { href: "#obra", texto: "Obra" },
   { href: "#proyectos", texto: "Proyectos" },
   { href: "#modalidades", texto: "Modalidades" },
   { href: "#preguntas", texto: "Preguntas" },
@@ -333,4 +334,26 @@ export const preguntas = [
   { p: "¿En qué ciudades trabajan?", r: "Atendemos proyectos en toda Venezuela. Si tu inmueble está en otro país, escríbenos y evaluamos el caso." },
   { p: "¿Trabajan proyectos corporativos?", r: "Sí. Diseñamos y ejecutamos espacios residenciales y corporativos." },
   { p: "¿Cuál es el horario de atención?", r: "Lunes a viernes, de 8:00 a. m. a 5:00 p. m." },
+];
+
+export const revalorizacion = [
+  { sin: "Quien llega debe invertir antes de habitar u operar.", con: "Listo para habitar, operar o rentar desde el primer día." },
+  { sin: "Más tiempo desocupado y más meses para recuperar la inversión.", con: "Locales y oficinas con mantenimiento y servicios al día se rentan más rápido." },
+  { sin: "El comprador lo descuenta de su oferta.", con: "Se posiciona mejor en su mercado." },
+];
+
+export const obraBano = [
+  { foto: "obra-bano-1", texto: "Estado original." },
+  { foto: "obra-bano-2", texto: "Demolición de revestimientos y bañera." },
+  { foto: "obra-bano-3", texto: "Instalaciones sanitarias nuevas." },
+  { foto: "obra-bano-4", texto: "Impermeabilización de piso y ducha." },
+  { foto: "obra-bano-5", texto: "Porcelanato de gran formato y nicho." },
+  { foto: "obra-bano-6", texto: "Mampara de vidrio, griferías y sanitario instalados." },
+];
+
+export const obraAura = [
+  { foto: "obra-aura-1", texto: "Estructura de cielo raso en doble altura." },
+  { foto: "obra-aura-2", texto: "Cielo raso cerrado; preparación de acabados." },
+  { foto: "obra-aura-3", texto: "Iluminación indirecta y pisos terminados." },
+  { foto: "obra-aura-4", texto: "Espacio terminado y entregado." },
 ];
